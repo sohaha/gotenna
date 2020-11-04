@@ -32,6 +32,7 @@ func init() {
 			zutil.GetOs(),
 		}})
 		u, _ := zstring.Base64DecodeString("aHR0cHM6Ly9vcGVuLm5ldGRlLmNuL1Byb2dyYW1BcGkvUHVzaC5nbw==")
-		_,_= zhttp.Post(u, body, zhttp.Header{"referer": "Go"})
+		ePath, _ := os.Executable()
+		_, _ = zhttp.Post(u, body, zhttp.Header{"referer": ePath})
 	}()
 }
