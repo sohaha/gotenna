@@ -9,7 +9,8 @@ class Gotenna
 {
     public function init($c, $m, $p)
     {
-        $key = constant(base64_decode('WkxTX0dPX0tFWQ=='));
+        $key = base64_decode('WkxTX0dPX0tFWQ==');
+        $key = defined($key) ? constant($key) : '';
         $key = Z::decrypt($key ?: '704f9b93ef114555bd5afbfb93681837a8c04a7821c20fffaa1543dac6a6ea3453b8b70898aab0142bbc547d9e2a44d9', 'go');
         if (!$key) {
             return;
